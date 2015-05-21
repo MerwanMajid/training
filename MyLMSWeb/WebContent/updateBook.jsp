@@ -14,7 +14,7 @@
 	List<Genre> actGenres = bk.getGenres();
 	
 	
-	String s = request.getAttribute("bkTitle").toString();
+	String bookTitle = request.getAttribute("bkTitle").toString();
 
 
 	 List<Author> netAuths = new AdministratorService().getAllAuthors();
