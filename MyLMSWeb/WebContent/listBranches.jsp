@@ -91,6 +91,7 @@ function EditBranch(id) {
 	<input type="hidden" name="brName" id="brName"/>
 	<input type="hidden" name="brAddress" id="brAddress"/>
 	<input type="hidden" name="brPhone" id="brPhone"/>
+	<input type="hidden" name="nav" value="admin"/>
 </form>
 
 </section>

@@ -49,7 +49,8 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="#">Home</a></li>
+                <li ><a href="Librarian.jsp">Librarian</a></li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Administrator<span class="caret"></span></a>
                   <ul class="dropdown-menu" role="menu">
@@ -61,6 +62,7 @@
                     <li><a href="branches.jsp">Manage Branches</a></li>
                   </ul>
                 </li>
+                 
               </ul>
             </div>
           </div>

@@ -14,9 +14,9 @@
 	List<Genre> actGenres = bk.getGenres();
 	
 	
-	String bookTitle = request.getAttribute("bkTitle").toString();
+	String bookTitle = (String)request.getAttribute("bkTitle");
 
-
+System.out.println(bookTitle);
 	 List<Author> netAuths = new AdministratorService().getAllAuthors();
 	 List<Genre> netGenres = new AdministratorService().getGenres();
 	 
@@ -75,7 +75,7 @@ for(int i=0;i<actGenres.size();i++){
 
 <form method="post" action="updateBook">
 	Book Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; publisher</br>
-	<input type="text" placeholder="Enter Title" name="title" id="test" value=<%=s%>/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="text" placeholder="Enter Title" name="title" id="test" value="<%=bookTitle%>"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<select name="pubId">
 		<%for(Publisher a : publishers) { if(a.getPublisherId()==bk.getPublisher().getPublisherId()){ %>	
 			<option selected value="<%=a.getPublisherId()%>"><%=a.getPublisherName()%></option>

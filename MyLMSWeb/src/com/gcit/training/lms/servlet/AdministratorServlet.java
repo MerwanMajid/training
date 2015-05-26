@@ -427,7 +427,9 @@ public class AdministratorServlet extends HttpServlet {
 
 	private void updateBranch(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = getServletContext().getRequestDispatcher("/listBranches.jsp");
+		
+		  RequestDispatcher rd=getServletContext().getRequestDispatcher("/libBranche.jsp");
+		
 		try {
 			
 		
@@ -442,6 +444,7 @@ public class AdministratorServlet extends HttpServlet {
 			
 			new AdministratorService().updateBranch(br);
 			request.setAttribute("result", "Branch updated Succesfully!");
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
