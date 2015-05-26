@@ -15,7 +15,7 @@ import com.gcit.training.lms.service.LibrarianService;
 /**
  * Servlet implementation class LibrarianServlet
  */
-@WebServlet({ "/LibUpdateBranch" })
+@WebServlet("/libBranch")
 public class LibrarianServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -49,23 +49,29 @@ public class LibrarianServlet extends HttpServlet {
 				request.getRequestURI().length());
 
 		switch (function) {
-			case "/LibUpdateBranch": {
-				Branch b = new Branch();
-				b.setBranchId(Integer.parseInt(request.getParameter("brId")));
-				b.setBranchName(request.getParameter("brName"));
-				b.setBranchAddress(request.getParameter("brAddress"));
-				RequestDispatcher rd = getServletContext().getRequestDispatcher("/libBranch.jsp");
-				try{
-					new LibrarianService().updateBranch(b);
-				}
-				catch(Exception e){
-					e.printStackTrace();
-				}
-				rd.forward(request, response);
+			case "/libBranch": {
+		
+				testMethod(request, response);
 			break;
 			}
 		}
 
+	}
+
+	private void testMethod(HttpServletRequest request,
+			HttpServletResponse response) throws ServletException, IOException {
+		Branch b = new Branch();
+		b.setBranchId(Integer.parseInt(request.getParameter("brId")));
+		b.setBranchName(request.getParameter("brName"));
+		b.setBranchAddress(request.getParameter("brAddress"));
+		RequestDispatcher rd = getServletContext().getRequestDispatcher("/libBranch.jsp");
+		try{
+			new LibrarianService().updateBranch(b);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		rd.forward(request, response);
 	}
 
 }

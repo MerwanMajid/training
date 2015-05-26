@@ -86,7 +86,7 @@ function EditBranch(id) {
 	<input type="hidden" name="branchId" id="branchId"/>
 </form>
 
-<form action="updateBranch" method="post" name="updatefrm">
+<form action="LibrarianServlet" method="post" name="updatefrm">
 	<input type="hidden" name="brId" id="brId"/>
 	<input type="hidden" name="brName" id="brName"/>
 	<input type="hidden" name="brAddress" id="brAddress"/>

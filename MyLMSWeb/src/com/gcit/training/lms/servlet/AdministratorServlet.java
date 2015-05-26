@@ -19,7 +19,7 @@ import com.gcit.training.lms.service.AdministratorService;
 @WebServlet({ "/addAuthor","/updateAuthor", "/deleteAuthor" , "/addPublisher",
 	         "/deletePublisher","/updatePublisher","/addBorrower","/deleteBorrower",
 	         "/updateBorrower","/addBranch","/updateBranch","/deleteBranch","/addGenre",
-	         "/updateGenre","/deleteGenre","/addBook","/updateBook","/preUpdateBook"})
+	         "/updateGenre","/deleteGenre","/addBook","/updateBook","/preUpdateBook","/libBranch"})
 public class AdministratorServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -56,6 +56,11 @@ public class AdministratorServlet extends HttpServlet {
 		switch (function) {
 		case "/addAuthor": {
 			addAuthor(request, response);
+			break;
+		}
+		case "/libBranch": {
+			RequestDispatcher rd = getServletContext().getRequestDispatcher("/libBranch.jsp");
+			rd.forward(request,response);
 			break;
 		}
 		
