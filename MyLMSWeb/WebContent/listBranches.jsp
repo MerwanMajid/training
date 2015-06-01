@@ -1,9 +1,13 @@
-<%@page import="com.gcit.training.lms.entity.*"%>
+
 <%@page import="java.util.List"%>
 <%@page import="com.gcit.training.lms.service.AdministratorService"%>
+<%@page import="com.gcit.training.lms.entity.Branch"%>
+
 <%
 
-	List<Branch> branches = new AdministratorService().getBranches();
+List<Branch> branches =null;
+	AdministratorService admin  = new AdministratorService();
+	branches = (List<Branch>)admin.getBranches();
 
 %>
 
@@ -63,7 +67,7 @@ function EditBranch(id) {
 <div style="margin-top:80px;margin-left:10px;">
 <section>
 <table class="table">
-	<tr bgcolor="gray" ><font color:red>
+	<tr bgcolor="gray" >
 		<td><font color="#fff">Branch Id</font></td>
 		<td><font color="#fff">Branch Name</font></td>
 		<td><font color="#fff">Branch Address</font></td>

@@ -74,7 +74,7 @@ for(int i=0;i<actGenres.size();i++){
 <section>
 
 <form method="post" action="updateBook">
-	Book Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; publisher</br>
+	Book Title &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; publisher<br/>
 	<input type="text" placeholder="Enter Title" name="title" id="test" value="<%=bookTitle%>"/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	<select name="pubId">
 		<%for(Publisher a : publishers) { if(a.getPublisherId()==bk.getPublisher().getPublisherId()){ %>	
@@ -85,9 +85,9 @@ for(int i=0;i<actGenres.size();i++){
 										<option value="<%=a.getPublisherId()%>"><%=a.getPublisherName()%></option>
 					
 		<%} %>
-	</select></br></br>
+	</select><br/><br/>
 	select Author(s) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Genre(s)</br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;select Genre(s)<br/>
 	<select multiple name="authorId">
 	
 	  <%for(Author b : actAuthors) { %>	
@@ -113,7 +113,7 @@ for(int i=0;i<actGenres.size();i++){
 			<option value="<%=a.getGenre_id()%> selected"><%=a.getGenre_name()%></option>
 		<% } %>
 	</select><br/></br>
-	 <input type="hidden" name="bookId" value=${bkId} />
+	 <input type="hidden" name="bookId" value="${bkId}" />
 	<input type="submit"/>
    
 </form>

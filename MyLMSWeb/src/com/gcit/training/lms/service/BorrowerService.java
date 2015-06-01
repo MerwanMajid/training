@@ -58,7 +58,7 @@ public class BorrowerService {
 		
 	}
 
-	public void checkOut(Book book,Branch branch,Borrower borrower)throws Exception{
+	public int checkOut(Book book,Branch branch,Borrower borrower)throws Exception{
 		Connection c = ConnectionUtil.getConnection();
 		try{
 		Book_loans bkLoans = new Book_loans();
@@ -90,8 +90,11 @@ public class BorrowerService {
 		bkCopies.setNoOfCopies(bkCopies.getNoOfCopies()-1);
 		
 		copDao.update(bkCopies);
-		bkLoansDao.create(bkLoans);
+		int bkLoanId = bkLoansDao.create(bkLoans);
 		c.commit();
+		
+		return bkLoanId;
+		
 		}
 	catch(Exception e){
 		c.rollback();
@@ -141,7 +144,7 @@ public class BorrowerService {
 			bkCDAO.update(bc);
 			
 			c.commit();
-			System.out.println("returned successfully");
+			
 		}
 	catch(Exception e){
 		c.rollback();

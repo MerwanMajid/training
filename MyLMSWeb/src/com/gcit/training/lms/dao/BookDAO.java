@@ -2,7 +2,7 @@ package com.gcit.training.lms.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -59,25 +59,6 @@ public class BookDAO extends BaseDAO<List<Book>>{
 	public void delete(Book book) throws Exception {
 		save("delete from tbl_book where bookId = ?",
 				new Object[] { book.getBookId() });
-	}
-
-	@SuppressWarnings("unchecked")
-	public List<Book> readAll() throws Exception {
-		
-		return (List<Book>) read("select bk.bookId,bk.title,bk.pubId,a.authorId,g.genre_id from tbl_book bk,tbl_book_authors a,tbl_book_genres g where bk.bookId=a.bookId and bk.bookId=g.bookId", null);
-	}
-
-	@SuppressWarnings("unchecked")
-	public Book readOne(int bookId) throws Exception {
-		List<Book> list = (List<Book>) read(
-				"select bk.bookId,bk.title,bk.pubId,a.authorId,g.genre_id from tbl_book bk,tbl_book_authors a,tbl_book_genres g where bk.bookId=a.bookId and bk.bookId=g.bookId and bk.bookId = ?",
-				new Object[] { bookId });
-		
-		if (list != null && list.size() > 0) {
-			return list.get(0);
-		} else {
-			return null;
-		}
 	}
 
 	@Override

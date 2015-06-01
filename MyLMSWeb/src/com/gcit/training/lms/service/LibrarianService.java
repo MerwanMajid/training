@@ -63,14 +63,14 @@ public class LibrarianService {
 		
 		Connection c = ConnectionUtil.getConnection();
 		BookDAO bDAO = new BookDAO(c);
-		return bDAO.readOne(bookId);
+		return bDAO.readOneBook(bookId);
 	}
 
 	public List<Book> getBooks()throws Exception{
 		
 		Connection c = ConnectionUtil.getConnection();
 		BookDAO bDAO = new BookDAO(c);
-		return bDAO.readAll();
+		return bDAO.readAllBooks();
 	}
 	public Book readBook(int bookId)throws Exception{
 		Connection c = ConnectionUtil.getConnection();

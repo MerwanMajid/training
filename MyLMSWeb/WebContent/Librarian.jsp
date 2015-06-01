@@ -20,7 +20,7 @@ function navigate(brId){
 <div style="margin-top:80px;margin-left:10px;">
 <section>
 <table class="table">
-	<tr bgcolor="gray" ><font color:red>
+	<tr bgcolor="gray" >
 		<td><font color="#fff">Branch Id</font></td>
 		<td><font color="#fff">Branch Name</font></td>
 		<td><font color="#fff">Branch Address</font></td>

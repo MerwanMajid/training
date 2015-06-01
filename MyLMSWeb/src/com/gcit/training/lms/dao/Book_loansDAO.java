@@ -20,9 +20,10 @@ public class Book_loansDAO  extends BaseDAO<List<Book_loans>>{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void create(Book_loans book_loans) throws Exception {
-		save("insert into tbl_book_loans (bookId,branchId,cardNo,dateOut,dueDate) values (?,?,?,?,?)",
+	public int create(Book_loans book_loans) throws Exception {
+	int bkLoanId	= saveWithId("insert into tbl_book_loans (bookId,branchId,cardNo,dateOut,dueDate) values (?,?,?,?,?)",
 				new Object[] { book_loans.getBook().getBookId(),book_loans.getBranch().getBranchId(),book_loans.getBorrower().getCardNo(),book_loans.getDateOut(),book_loans.getDueDate()});
+	return bkLoanId;
 	}
 
 	public void update(Book_loans book_loans) throws Exception {
